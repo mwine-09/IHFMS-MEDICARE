@@ -1,4 +1,4 @@
-package integrations.billing;
+package adaptations.billing;
 
 // an adapter for legacy (other) billing systems
 public interface MedicalBillingTarget

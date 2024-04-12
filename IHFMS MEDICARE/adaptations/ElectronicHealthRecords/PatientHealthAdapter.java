@@ -1,24 +1,22 @@
-package integrations.ehr;
+package adaptations.ElectronicHealthRecords;
+
 
 import debug.DebugLogger;
-
-/// This class is an adapter for the system
-public class PatientHealthInfoIntegration extends PatientHealthUtility implements PatientEHRAdapter {
-
+// An adapter class that extends the old system and implements operations expected by the client
+public class PatientHealthAdapter extends PatientHealthAdaptee implements PatientHealthTarget {
     @Override
-    public void getMedicalRecords() {
-        // log info
-        DebugLogger.printInfo("Getting medical records...");
+    public void getAllPatients() {
 
-        // get health status
-        fetchAllMedicalRecords();
+        // log info
+        DebugLogger.printInfo("Getting all patients...");
+        fetchAllPatients();
 
         // log success message
-        DebugLogger.logSuccess("Health records retrieved successfully.");
+        DebugLogger.logSuccess("All patients retrieved successfully.");
     }
-
     @Override
     public void fetchPatientDiagnoses() {
+
         // log info
         DebugLogger.printInfo("Getting diagnosis...");
 
@@ -32,6 +30,7 @@ public class PatientHealthInfoIntegration extends PatientHealthUtility implement
 
     @Override
     public void fetchInsuranceInformation() {
+        
         // get insurance information
         System.out.println("Getting insurance information...");
 
@@ -40,17 +39,17 @@ public class PatientHealthInfoIntegration extends PatientHealthUtility implement
         // log success message
         DebugLogger.logSuccess("Insurance information retrieved successfully.");
     }
-
-
     @Override
-    public void getAllPatients() {
+    public void getMedicalRecords() {
         // log info
-        DebugLogger.printInfo("Getting all patients...");
+        DebugLogger.printInfo("Getting medical records...");
 
-        fetchAllPatients();
+        // get health status
+        fetchAllMedicalRecords();
 
         // log success message
-        DebugLogger.logSuccess("All patients retrieved successfully.");
+        DebugLogger.logSuccess("Health records retrieved successfully.");
     }
+
 
 }

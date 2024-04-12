@@ -1,7 +1,8 @@
-package integrations.ehr;
+package adaptations.ElectronicHealthRecords;
 
-// Integration of Patient Health Info electronic health records (EHR)
-public interface PatientEHRAdapter {
+
+// Methods that the client expects to interact with
+public interface PatientHealthTarget {
 
     // get patients insurance information
     public void fetchInsuranceInformation();

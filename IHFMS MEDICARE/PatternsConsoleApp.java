@@ -1,9 +1,12 @@
+ 
+
+import adaptations.ElectronicHealthRecords.PatientHealthAdapter;
+import adaptations.ElectronicHealthRecords.PatientHealthTarget;
 import debug.DebugLogger;
 import functionality.messaging.GroupMessageObserver;
 import functionality.messaging.MessagingFunctionality;
-import integrations.billing.MedicalBillingAdapter;
-import integrations.billing.MedicalBillingTarget;
-import integrations.ehr.PatientHealthInfoIntegration;
+import adaptations.billing.MedicalBillingAdapter;
+import adaptations.billing.MedicalBillingTarget;
 import user.*;
 
 public class PatternsConsoleApp {
@@ -78,8 +81,6 @@ public class PatternsConsoleApp {
         // create a billing integration
         MedicalBillingTarget medicalBillingTarget = new MedicalBillingAdapter();
 
-    
-
         // log billing intergration
         DebugLogger.logSuccess("Billing Integrated successfully.");
 
@@ -95,13 +96,12 @@ public class PatternsConsoleApp {
         // payment summary
         medicalBillingTarget.getPaymentSummary();
 
-        // * EHR
-        PatientHealthInfoIntegration healthInfoIntegration = new PatientHealthInfoIntegration();
+        // ELECTRONIC HEALTH RECORDS
+        PatientHealthTarget healthInfoIntegration = new PatientHealthAdapter();
 
-        // log ehr integrated
+        // log EHR integrated
         DebugLogger.logSuccess("EHR Integrated successfully.");
 
-        // * call integration methods
         // get health status
         healthInfoIntegration.getMedicalRecords();
 

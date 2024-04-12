@@ -1,7 +1,7 @@
-package integrations.ehr;
+package adaptations.ElectronicHealthRecords;
 
 // utility class for this Patient Health Info Integration
-public class PatientHealthUtility {
+public class PatientHealthAdaptee {
 
     // get list of patients
     public void fetchAllPatients() {

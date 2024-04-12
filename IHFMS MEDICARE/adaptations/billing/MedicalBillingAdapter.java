@@ -1,4 +1,4 @@
-package integrations.billing;
+package adaptations.billing;
 
 import debug.DebugLogger;
 
