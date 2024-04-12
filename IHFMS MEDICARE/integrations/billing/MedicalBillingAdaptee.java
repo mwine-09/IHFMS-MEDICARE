@@ -1,6 +1,6 @@
 package integrations.billing;
 
-public class MedicalBillingUtility {
+public class MedicalBillingAdaptee {
 
     // fetch billing history
     public void fetchBillingHistory() {

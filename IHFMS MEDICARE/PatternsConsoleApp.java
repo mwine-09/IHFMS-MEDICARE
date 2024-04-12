@@ -1,7 +1,8 @@
 import debug.DebugLogger;
 import functionality.messaging.GroupMessageObserver;
 import functionality.messaging.MessagingFunctionality;
-import integrations.billing.MedicalBillingSystemsIntegration;
+import integrations.billing.MedicalBillingAdapter;
+import integrations.billing.MedicalBillingTarget;
 import integrations.ehr.PatientHealthInfoIntegration;
 import user.*;
 
@@ -75,22 +76,24 @@ public class PatternsConsoleApp {
 
          // * Billing
         // create a billing integration
-        MedicalBillingSystemsIntegration billingIntegration = new MedicalBillingSystemsIntegration();
+        MedicalBillingTarget medicalBillingTarget = new MedicalBillingAdapter();
+
+    
 
         // log billing intergration
         DebugLogger.logSuccess("Billing Integrated successfully.");
 
         // fetch billing information
-        billingIntegration.fetchBillingInfo();
+        medicalBillingTarget.fetchBillingInfo();
 
         // fetch billing history
-        billingIntegration.fetchBillingHistory();
+        medicalBillingTarget.fetchBillingHistory();
 
         // payment history
-        billingIntegration.getPaymentHistory();
+        medicalBillingTarget.getPaymentHistory();
 
         // payment summary
-        billingIntegration.getPaymentSummary();
+        medicalBillingTarget.getPaymentSummary();
 
         // * EHR
         PatientHealthInfoIntegration healthInfoIntegration = new PatientHealthInfoIntegration();

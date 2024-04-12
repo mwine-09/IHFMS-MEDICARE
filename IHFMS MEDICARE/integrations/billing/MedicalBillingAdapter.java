@@ -2,7 +2,7 @@ package integrations.billing;
 
 import debug.DebugLogger;
 
-public class MedicalBillingSystemsIntegration extends MedicalBillingUtility implements MedicalBillingTarget {
+public class MedicalBillingAdapter extends MedicalBillingAdaptee implements MedicalBillingTarget {
 
     // get patient's billing information
     public void fetchPatientsBillingInfo() {
