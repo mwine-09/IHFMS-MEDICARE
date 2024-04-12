@@ -1,15 +1,13 @@
 package functionality;
 
-// Functionality:
-// 3.Accounts Reconciliation: Automated reconciliation of accounts receivable, accounts payable, and general ledger entries to ensure financial transparency and compliance.
+// Interface for automated reconciliation of accounts receivable, accounts payable, and general ledger entries
 public interface AccountReconciliationFunctionality {
-    // receive payments to cater for the accounts receivable
+    // Receive payments to account for accounts receivable
     public void receivePayments();
 
-    // make payments to cater for the accounts payable
+    // Process payments to account for accounts payable
     public void processPayments();
 
-    // reconcile accounts for automatic accounts reconciliation
+    // Perform account reconciliation for automatic reconciliation
     public void performAccountReconciliation();
-
 }

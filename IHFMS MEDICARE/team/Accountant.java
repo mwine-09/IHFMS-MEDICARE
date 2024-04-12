@@ -1,27 +1,32 @@
 package team;
 
 import functionality.AccountReconciliationFunctionality;
-import functionality.messaging.GroupMessageObserver;
+import functionality.messaging.MessageProcessor;
+import java.util.List;
 import user.SystemUser;
 
-public class Accountant extends SystemUser implements AccountReconciliationFunctionality, GroupMessageObserver {
 
+
+public class Accountant extends SystemUser implements AccountReconciliationFunctionality {
+    MessageProcessor messageProcessor = MessageProcessor.getMessageProcessor();
     public void createLedgerEntries() {
         System.out.println("Generating ledger entries");
     }
 
     // receive payments to cater for the accounts receivable
+    @Override
     public void receivePayments() {
         System.out.println("Receiving payments");
     }
 
-    @Override
-    public void notifyAnotherMember(GroupMessageObserver member) {
+
+    public void notifyAnotherMember(SystemUser member) {
         // send message to another member
-        member.sendGroupMessage("Accountant sent you a message.");
+        messageProcessor.sendGroupMessage("Accountant sent you a message.");
     }
 
     // reconcile accounts for automatic accounts reconciliation
+    @Override
     public void performAccountReconciliation() {
         System.out.println("Reconciling accounts");
     }
@@ -40,18 +45,28 @@ public class Accountant extends SystemUser implements AccountReconciliationFunct
     }
 
     // method to update team message
-    @Override
-    public void sendGroupMessage(String message) {
-        // set message
-        setMessage(message);
-
-        // print message
-        System.out.println("Messaged Received (Accountant): " + getMessage());
-    }
+  
 
     // make payments to cater for the accounts payable
+    @Override
     public void processPayments() {
         System.out.println("Making payments");
     }
+
+    // send a group message
+
+    public void sendGroupMessage(String message) {
+        messageProcessor.sendGroupMessage(message);
+        System.out.println("Sending message: " + message);
+    }
+
+    public void sendMessageToMember(SystemUser messageObserver){
+        System.out.print("The message has been sent to the member");
+    }
+    public void notifyGroupMembers(List <SystemUser> groupMessageObservers){
+      messageProcessor.notifyGroupMembers(groupMessageObservers);
+    }
+
+  
 
 }

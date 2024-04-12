@@ -1,123 +1,123 @@
  
 
-import adaptations.ElectronicHealthRecords.PatientHealthAdapter;
-import adaptations.ElectronicHealthRecords.PatientHealthTarget;
-import debug.DebugLogger;
-import functionality.messaging.GroupMessageObserver;
-import functionality.messaging.MessagingFunctionality;
-import adaptations.billing.MedicalBillingAdapter;
-import adaptations.billing.MedicalBillingTarget;
-import user.*;
+// import adaptations.ElectronicHealthRecords.PatientHealthAdapter;
+// import adaptations.ElectronicHealthRecords.PatientHealthTarget;
+// import debug.DebugLogger;
+// import functionality.messaging.GroupMessagingObserver;
+// import functionality.messaging.MessageProcessor;
+// import functionality.messaging.MessagingFunctionality;
+// import adaptations.billing.MedicalBillingAdapter;
+// import adaptations.billing.MedicalBillingTarget;
+// import user.*;
 
-public class PatternsConsoleApp {
+// public class PatternsConsoleApp {
 
-    public static void main(String[] args) {
+//     public static void main(String[] args) {
 
-        // print start factory
-        DebugLogger.printInfo("-- Factory Pattern --");
+//         // print start factory
+//         DebugLogger.printInfo("-- Factory Pattern --");
 
-        // * Factory Pattern
-        SystemUserCreator userFactory = new SystemUserCreator();
+//         // * Factory Pattern
+//         SystemUserCreator userFactory = new SystemUserCreator();
 
-        // use factory pattern to create users
-        SystemUser financeOfficer = userFactory.createUser("fi");
-        SystemUser admininistrator = userFactory.createUser("ad");
-        SystemUser healthCareOfficer = userFactory.createUser("hc");
+//         // use factory pattern to create users
+//         SystemUser financeOfficer = userFactory.createUser("FI");
+//         SystemUser admininistrator = userFactory.createUser("AD");
+//         SystemUser healthCareOfficer = userFactory.createUser("HC");
 
-        // set names for each user
-        admininistrator.setName("Leo");
-        financeOfficer.setName("Ssuka");
-        healthCareOfficer.setName("Mwine");
+//         // set names for each user
+//         admininistrator.setName("Leo");
+//         financeOfficer.setName("Ssuka");
+//         healthCareOfficer.setName("Mwine");
 
-        // set roles
-        admininistrator.setRole("Admin");
-        financeOfficer.setRole("Finance");
-        healthCareOfficer.setRole("Health Care Provider");
+//         // set roles
+//         admininistrator.setRole("Admin");
+//         financeOfficer.setRole("Finance");
+//         healthCareOfficer.setRole("Health Care Provider");
 
-        // print details
-        admininistrator.printMyDetails();
-        financeOfficer.printMyDetails();
-        healthCareOfficer.printMyDetails();
+//         // print details
+//         admininistrator.printMyDetails();
+//         financeOfficer.printMyDetails();
+//         healthCareOfficer.printMyDetails();
 
-        // print Start Messaging
-        DebugLogger.printInfo("-- (Message Observer) Observer Pattern --");
+//         // print Start Messaging
+//         DebugLogger.printInfo("-- (Message Observer) Observer Pattern --");
 
-        // * create observers to listen to messages
-        GroupMessageObserver adminTeamMember = (GroupMessageObserver) admininistrator;
-        GroupMessageObserver financeTeamMember = (GroupMessageObserver) financeOfficer;
-        GroupMessageObserver healthTeamMember = (GroupMessageObserver) healthCareOfficer;
+//         // * create observers to listen to messages
 
-        // * Implement Messaging Functionality
-        // create a messaging object
-        MessagingFunctionality messaging = new MessagingFunctionality();
+          
 
-        // add top level team members
-        messaging.addObserverToGroup(adminTeamMember);
-        messaging.addObserverToGroup(financeTeamMember);
-        messaging.addObserverToGroup(healthTeamMember);
+//         // * Implement Messaging Functionality
+//         // create a messaging object
+//         MessageProcessor messageProcessor = new MessageProcessor();
 
-        // remove a member
-        messaging.removeObserverFromGroup(healthTeamMember);
-        messaging.removeObserverFromGroup(adminTeamMember);
+//         // add top level team members
+//         messageProcessor.addObserverToGroup(adminTeamMember);
+//         messageProcessor.addObserverToGroup(financeTeamMember);
+//         messageProcessor.addObserverToGroup(healthTeamMember);
 
-        // send message
-        messaging.setMessage("Hello members");
+//         // remove a member
+//         messageProcessor.removeObserverFromGroup(healthTeamMember);
+//         messageProcessor.removeObserverFromGroup(adminTeamMember);
 
-        // Admin Sends Message to Finance
-        adminTeamMember.notifyAnotherMember(financeTeamMember);
+//         // send message
+//         messageProcessor.setMessage("Hello members");
 
-        // Finance Sends Message to HealthCareProvider
-        financeTeamMember.notifyAnotherMember(healthTeamMember);
+//         // Admin Sends Message to Finance
+//         adminTeamMember.notifyAnotherMember(financeTeamMember);
 
-        // % stopped her
+//         // Finance Sends Message to HealthCareProvider
+//         financeTeamMember.notifyAnotherMember(healthTeamMember);
 
-        // * Integrations
-        // * Adapter Pattern
-        // print Start Integrations
-        DebugLogger.printInfo("-- (Integrations with Other Systems) Adapter Pattern  --");
+//         // % stopped her
+
+//         // * Integrations
+//         // * Adapter Pattern
+//         // print Start Integrations
+//         DebugLogger.printInfo("-- (Integrations with Other Systems) Adapter Pattern  --");
 
 
-         // * Billing
-        // create a billing integration
-        MedicalBillingTarget medicalBillingTarget = new MedicalBillingAdapter();
+//          // * Billing
+//         // create a billing integration
+//         MedicalBillingTarget medicalBillingTarget = new MedicalBillingAdapter();
 
-        // log billing intergration
-        DebugLogger.logSuccess("Billing Integrated successfully.");
+//         // log billing intergration
+//         DebugLogger.logSuccess("Billing Integrated successfully.");
 
-        // fetch billing information
-        medicalBillingTarget.fetchBillingInfo();
+//         // fetch billing information
+//         medicalBillingTarget.retrieveBillingInformation();
 
-        // fetch billing history
-        medicalBillingTarget.fetchBillingHistory();
+//         // fetch billing history
+//         medicalBillingTarget.retrieveBillingHistory();
 
-        // payment history
-        medicalBillingTarget.getPaymentHistory();
+//         // payment history
+//         medicalBillingTarget.retrievePaymentHistory();
 
-        // payment summary
-        medicalBillingTarget.getPaymentSummary();
+//         // payment summary
+//         medicalBillingTarget.retrievePaymentSummary();
 
-        // ELECTRONIC HEALTH RECORDS
-        PatientHealthTarget healthInfoIntegration = new PatientHealthAdapter();
+//         // ELECTRONIC HEALTH RECORDS
+//         PatientHealthTarget healthInfoIntegration = new PatientHealthAdapter();
 
-        // log EHR integrated
-        DebugLogger.logSuccess("EHR Integrated successfully.");
+//         // log EHR integrated
+//         DebugLogger.logSuccess("EHR Integrated successfully.");
 
-        // get health status
-        healthInfoIntegration.getMedicalRecords();
+//         // get health status
+//         healthInfoIntegration.getMedicalRecords();
 
-        // get diagnosis
-        healthInfoIntegration.fetchPatientDiagnoses();
+//         // get diagnosis
+//         healthInfoIntegration.fetchPatientDiagnoses();
 
-        // get insurances
-        healthInfoIntegration.fetchInsuranceInformation();
+//         // get insurances
+//         healthInfoIntegration.fetchInsuranceInformation();
 
        
-        // print End Integrations
-        DebugLogger.logSuccess("- System Done --");
-    }
+//         // print End Integrations
+//         DebugLogger.logSuccess("- System Done --");
+//     }
 
-}
+// }
 
-// get a list of all users
-// get their names and emails and put them in a list
-// only if the user has a variable set to true
+// // get a list of all users
+// // get their names and emails and put them in a list
+// // only if the user has a variable set to true

@@ -1,19 +1,18 @@
 package adaptations.ElectronicHealthRecords;
 
-
-// Methods that the client expects to interact with
+// Interface for interacting with patient health information
 public interface PatientHealthTarget {
 
-    // get patients insurance information
-    public void fetchInsuranceInformation();
+    // Retrieve patient's insurance information
+    public void retrieveInsuranceInformation();
 
-    // get patients
-    public void getAllPatients();
+    // Retrieve all patient records
+    public void retrieveAllPatients();
 
-    // get health records
-    public void getMedicalRecords();
+    // Retrieve patient's medical records
+    public void retrieveMedicalRecords();
 
-    // get patient's diagnosis
-    public void fetchPatientDiagnoses();
+    // Retrieve patient's diagnosis information
+    public void retrievePatientDiagnoses();
 
 }

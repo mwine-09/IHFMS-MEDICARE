@@ -1,18 +1,17 @@
 package adaptations.billing;
 
-// an adapter for legacy (other) billing systems
-public interface MedicalBillingTarget
- {
+// An adapter for legacy (other) billing systems
+public interface MedicalBillingTarget {
 
-    // get patient's billing information
-    public void fetchBillingInfo();
+    // Retrieve patient's billing information
+    public void retrieveBillingInformation();
 
-    // get patient's billing history
-    public void fetchBillingHistory();
+    // Retrieve patient's billing history
+    public void retrieveBillingHistory();
 
-    // get patient's payment history
-    public void getPaymentHistory();
+    // Retrieve patient's payment history
+    public void retrievePaymentHistory();
 
-    // get patient's payment summary
-    public void getPaymentSummary();
+    // Retrieve patient's payment summary
+    public void retrievePaymentSummary();
 }

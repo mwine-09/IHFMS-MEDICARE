@@ -1,14 +1,17 @@
 package functionality;
 
-
-// interface for finance management
+// Interface for automating finance management processes
 public interface FinanceAutomationFunctionality {
 
-    public void executePaymentAutomation();
+    // Execute automated payment processing
+    public void processPaymentsAutomatically();
     
-    public void automateInvoicing();
+    // Automate the generation of invoices
+    public void generateInvoicesAutomatically();
     
+    // Execute automated billing procedures
     public void executeAutomatedBilling();
     
-    public void runFinancialAutomation();
+    // Run all automated financial processes
+    public void runAutomatedFinancialProcesses();
 }

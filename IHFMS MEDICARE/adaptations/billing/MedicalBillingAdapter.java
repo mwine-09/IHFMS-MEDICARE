@@ -3,56 +3,54 @@ package adaptations.billing;
 import debug.DebugLogger;
 
 public class MedicalBillingAdapter extends MedicalBillingAdaptee implements MedicalBillingTarget {
-
-    // get patient's billing information
-    public void fetchPatientsBillingInfo() {
-        // log info
-        DebugLogger.printInfo("Getting billing information...");
+    DebugLogger logger = DebugLogger.getLogger();
+    @Override
+    public void retrieveBillingInformation() {
+        // Log info
+        logger.printInfo("Retrieving billing information...");
        
-        // get billing information
+        // Call adaptee method
         fetchBillingInfo();
 
-        // log success message
-        DebugLogger.logSuccess("Billing information retrieved successfully.");
+        // Log success message
+        logger.logSuccess("Billing information retrieved successfully.");
     }
 
     @Override
-    public void fetchBillingInfo() {
-        // log info
-        DebugLogger.printInfo("Getting billing information...");
+    public void retrieveBillingHistory() {
+        // Log info
+        logger.printInfo("Retrieving billing history...");
 
-        // get billing history
+        // Call adaptee method
         fetchBillingHistory();
 
-        // log success message
-        DebugLogger.logSuccess("Billing history retrieved successfully.");
+        // Log success message
+        logger.logSuccess("Billing history retrieved successfully.");
     }
 
-
     @Override
-    public void getPaymentHistory() {
-        // log info
-        DebugLogger.printInfo("Getting payment history...");
+    public void retrievePaymentHistory() {
+        // Log info
+        logger.printInfo("Retrieving payment history...");
 
-        // get payment history
+        // Call adaptee method
         fetchPaymentHistory();
 
-        // log success message
-        DebugLogger.logSuccess("Payment history retrieved successfully.");
+        // Log success message
+        logger.logSuccess("Payment history retrieved successfully.");
     }
 
     @Override
-    public void getPaymentSummary() {
-        // log info
-        DebugLogger.printInfo("Getting payment summary...");
+    public void retrievePaymentSummary() {
+        // Log info
+        logger.printInfo("Retrieving payment summary...");
 
-        // get payment summary
+        // Print payment summary
         System.out.println("Payment Summary: ");
         System.out.println("Payment Date: 2021-01-01");
         System.out.println("Payment Amount: $100.00");
 
-        // log success message
-        DebugLogger.logSuccess("Payment summary retrieved successfully.");
+        // Log success message
+        logger.logSuccess("Payment summary retrieved successfully.");
     }
-    
 }

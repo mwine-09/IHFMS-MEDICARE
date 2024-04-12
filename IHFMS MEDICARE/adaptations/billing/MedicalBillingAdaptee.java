@@ -2,19 +2,19 @@ package adaptations.billing;
 
 public class MedicalBillingAdaptee {
 
-    // fetch billing history
+    // Fetch billing history
     public void fetchBillingHistory() {
-        System.out.println("Fetching billing history...");
+        System.out.println("Adaptee: Fetching billing history...");
     }
 
-    // fetch billing information
+    // Fetch billing information
     public void fetchBillingInfo() {
-        System.out.println("Fetching billing information...");
+        System.out.println("Adaptee: Fetching billing information...");
     }
 
-    // fetch payment history
+    // Fetch payment history
     public void fetchPaymentHistory() {
-        System.out.println("Fetching payment history...");
+        System.out.println("Adaptee: Fetching payment history...");
     }
 
 }

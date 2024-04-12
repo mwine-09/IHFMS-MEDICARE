@@ -1,25 +1,25 @@
 package adaptations.ElectronicHealthRecords;
 
-// utility class for this Patient Health Info Integration
+// Utility class for integrating patient health information
 public class PatientHealthAdaptee {
 
-    // get list of patients
-    public void fetchAllPatients() {
-        System.out.println("Getting list of patients...");
+    // Retrieve list of patients
+    public void retrieveAllPatients() {
+        System.out.println("Adaptee: Retrieving list of patients...");
     }
 
-    // get health records
-    public void fetchAllMedicalRecords() {
-        System.out.println("Getting health records...");
+    // Retrieve health records
+    public void retrieveAllMedicalRecords() {
+        System.out.println("Adaptee: Retrieving health records...");
     }
 
-    // get diagnosis records
-    public void fetchDiagnosisRecords() {
-        System.out.println("Getting diagnosis records...");
+    // Retrieve diagnosis records
+    public void retrieveDiagnosisRecords() {
+        System.out.println("Adaptee: Retrieving diagnosis records...");
     }
 
-    // get insurance records
-    public void fetchInsuranceRecords() {
-        System.out.println("Getting insurance records...");
+    // Retrieve insurance records
+    public void retrieveInsuranceRecords() {
+        System.out.println("Adaptee: Retrieving insurance records...");
     }
 }
